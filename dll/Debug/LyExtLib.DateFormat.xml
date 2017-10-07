@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LyExtLib.DateFormat</name>
+    </assembly>
+    <members>
+        <member name="T:LyExtLib.DateFormat.Attributes.DateFormatAttribute">
+            <summary>
+            DateFormat
+            </summary>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Attributes.DateFormatAttribute.#ctor">
+            <summary>
+            DateFormat
+            </summary>
+        </member>
+        <member name="P:LyExtLib.DateFormat.Attributes.DateFormatAttribute.Type">
+            <summary>
+            年類型
+            </summary>
+        </member>
+        <member name="P:LyExtLib.DateFormat.Attributes.DateFormatAttribute.Format">
+            <summary>
+            格式
+            </summary>
+        </member>
+        <member name="T:LyExtLib.DateFormat.Enums.DateEnums">
+            <summary>
+            日期相關列舉
+            </summary>
+        </member>
+        <member name="T:LyExtLib.DateFormat.Enums.DateEnums.Year">
+            <summary>年類型</summary>
+        </member>
+        <member name="F:LyExtLib.DateFormat.Enums.DateEnums.Year.None">
+            <summary></summary>
+        </member>
+        <member name="F:LyExtLib.DateFormat.Enums.DateEnums.Year.TW">
+            <summary>民國年</summary>
+        </member>
+        <member name="F:LyExtLib.DateFormat.Enums.DateEnums.Year.CE">
+            <summary>西元年</summary>
+        </member>
+        <member name="F:LyExtLib.DateFormat.Extensions.DateFormatCalendar.TW">
+            <summary>
+            台灣曆
+            </summary>
+        </member>
+        <member name="T:LyExtLib.DateFormat.Extensions.StringExtensions">
+            <summary>
+            字串相關 Extensions
+            </summary>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.GetDateAttr``1(``0)">
+            <summary>
+            取得 DateFormatAttribute
+            </summary>
+            <param name="source">日期格式列舉</param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.GetDateFormat``1(``0)">
+            <summary>
+            取得 DateFormatAttribute 中的格式
+            </summary>
+            <param name="source">日期格式列舉</param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.GetDateType``1(``0)">
+            <summary>
+            取得 DateFormatAttribute 中的年度類型
+            </summary>
+            <param name="source">日期格式列舉</param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.ToDateTime``1(System.String,System.Nullable{``0})">
+            <summary>
+            將字串轉日期
+            </summary>
+            <param name="source">字串值</param>
+            <param name="fmformat">轉換格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.ToDateTime``1(System.String,``0)">
+            <summary>
+            將字串轉日期
+            </summary>
+            <param name="source">字串值</param>
+            <param name="fmformat">轉換格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.ToTWDateTime(System.String,System.String)">
+            <summary>民國年字串轉日期</summary>
+            <param name="twDate">字串值</param>
+            <param name="inInformat">
+            字串所顯示的日期格式 ex: yyyMMdd HH:mm:ss、yyyMMdd、yyMMdd
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.ToDateTime(System.String,System.String)">
+            <summary>字串轉日期</summary>
+            <param name="value">字串值</param>
+            <param name="format">字串所顯示的日期格式 ex: yyyy/MM/dd HH:mm:ss</param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.ToDataFormat``1(System.String,``0,``0)">
+            <summary>
+            將字串 轉日期 轉字串
+            </summary>
+            <param name="source">字串值</param>
+            <param name="fmformat">轉換格式</param>
+            <param name="toformat">轉換格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.ToDataFormat``1(System.String,System.Nullable{``0},System.Nullable{``0})">
+            <summary>
+            將字串 轉日期 轉字串
+            </summary>
+            <param name="source">字串值</param>
+            <param name="fmformat">轉換格式</param>
+            <param name="toformat">轉換格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.ToDataFormat``1(System.Nullable{System.DateTime},``0)">
+            <summary> DateTime? 轉 字串</summary>
+            <param name="source">DateTime? 值</param>
+            <param name="fmformat">轉換格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.StringExtensions.ToDataFormat``1(System.DateTime,``0)">
+            <summary> DateTime 轉 字串</summary>
+            <param name="source">DateTime? 值</param>
+            <param name="fmformat">轉換格式</param>
+            <returns></returns>
+        </member>
+        <member name="T:LyExtLib.DateFormat.Extensions.DateTimeExtensions">
+            <summary>
+            日期相關 Extensions
+            </summary>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.DateTimeExtensions.ToTWDateString(System.Nullable{System.DateTime},System.String)">
+            <summary>日期格式 轉 民國年字串
+            利用民國月曆轉成任何的 date time format</summary>
+            <param name="value">日期值</param>
+            <param name="format">
+            字串所顯示的日期格式 ex: yyyMMdd HH:mm:ss、yyyMMdd、yyMMdd
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:LyExtLib.DateFormat.Extensions.DateTimeExtensions.ToTWDateString(System.DateTime,System.String)">
+            <summary>日期格式 轉 民國年字串
+            利用民國月曆轉成任何的 date time format</summary>
+            <param name="value">日期值</param>
+            <param name="dateFormat">
+            字串所顯示的日期格式 ex: yyyMMdd HH:mm:ss、yyyMMdd、yyMMdd
+            </param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
