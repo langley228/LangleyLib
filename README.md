@@ -38,3 +38,6 @@
         [DateFormat(Type = DateEnums.Year.CE, Format = "yyyyMMdd")]
         CE_YYYYMMDD = 4,
     }
+    
+<p>"191017".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY, DataFormat.TW_YYYMMDD) => "1061019"</p>
+<p>"290200".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY, DataFormat.TW_YYMMDD) => "890229"</p>
