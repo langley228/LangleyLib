@@ -1,18 +1,18 @@
-# ExtlLib
+# LyExtLib
 
 
-<H3>ExtlLib.Extensions.dll</H3>
+<H3>LyExtLib.Extensions.dll</H3>
 <H4>Sample code</H4>
 <p>"a".ToWchr() => "ａ"</p>
 <p>"ａ".ToNchr() => "a"</p>
 <p>"!EWR$$!%我".ToEncodeBase64() => "IUVXUiQkISXmiJE="</p>
 <p>"Hello world".ToHexEncrypt() => "48656C6C6F20776F726C64"</p>
 
-<H3>ExtlLib.DateFormat.dll</H3>
+<H3>LyExtLib.DateFormat.dll</H3>
 <H4>Sample code</H4>
-<p>using ExtlLib.DateFormat;</p>
-<p>using ExtlLib.DateFormat.Attributes;</p>
-<p>using ExtlLib.DateFormat.Enums;</p>
+<p>using LyExtLib.DateFormat;</p>
+<p>using LyExtLib.DateFormat.Attributes;</p>
+<p>using LyExtLib.DateFormat.Enums;</p>
 <p><B>Create enum</B></p>
 
     public enum DataFormat
@@ -31,9 +31,9 @@
 <p>"290200".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY, DataFormat.TW_YYMMDD) => "890229"</p>
     
     
-<H3>ExtlLib.VB6Extensions.dll</H3>
+<H3>LyExtLib.VB6Extensions.dll</H3>
 <H4>Sample code</H4>
-<p>using ExtlLib.VB6Extensions;</p>
+<p>using LyExtLib.VB6Extensions;</p>
 <p>"A你B我C他".VBMid(4) => "我C他"</p>
 <p>"A你B我C他".VBMid(2, 4) => "你B我C"</p>
 <p>"A你B我C他".VBLeft(4) => "A你B我"</p>
