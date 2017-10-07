@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ExtlLib.DateFormat.Extensions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using ExtlLib.Extensions;
@@ -13,77 +14,63 @@ namespace ExtlLib.DateFormat.Extensions.Tests
     {
         /// <summary>民國曆(YYMMDD)</summary>
         [System.ComponentModel.Description("民國曆(YYMMDD)")]
-        [Mapping("1")]
         [DateFormat(Type = DateEnums.Year.TW, Format = "yyMMdd")]
         TW_YYMMDD = 1,
         /// <summary>民國曆(YYYMMDD)</summary>
         [System.ComponentModel.Description("民國曆(YYYMMDD)")]
-        [Mapping("2")]
         [DateFormat(Type = DateEnums.Year.TW, Format = "yyyMMdd")]
         TW_YYYMMDD = 2,
         /// <summary>西元曆(YYMMDD)</summary>
         [System.ComponentModel.Description("西元曆(YYMMDD)")]
-        [Mapping("3")]
         [DateFormat(Type = DateEnums.Year.CE, Format = "yyMMdd")]
         CE_YYMMDD = 3,
         /// <summary>西元曆(YYYYMMDD)</summary>
         [System.ComponentModel.Description("西元曆(YYYYMMDD)")]
-        [Mapping("4")]
         [DateFormat(Type = DateEnums.Year.CE, Format = "yyyyMMdd")]
         CE_YYYYMMDD = 4,
         /// <summary>西元曆(YYMM)</summary>
         [System.ComponentModel.Description("西元曆(YYMM)")]
-        [Mapping("5")]
         [DateFormat(Type = DateEnums.Year.CE, Format = "yyMM")]
         CE_YYMM = 5,
         /// <summary>民國曆(YYMM)</summary>
         [System.ComponentModel.Description("民國曆(YYMM)")]
-        [Mapping("6")]
         [DateFormat(Type = DateEnums.Year.TW, Format = "yyMM")]
         TW_YYMM = 6,
         /// <summary>民國曆(YYYMM)</summary>
         [System.ComponentModel.Description("民國曆(YYYMM)")]
-        [Mapping("7")]
         [DateFormat(Type = DateEnums.Year.TW, Format = "yyyMM")]
         TW_YYYMM = 7,
         /// <summary>民國曆(YYYYMMDD)</summary>
         [System.ComponentModel.Description("民國曆(YYYYMMDD)")]
-        [Mapping("8")]
         [DateFormat(Type = DateEnums.Year.TW, Format = "yyyyMMdd")]
         TW_YYYYMMDD = 8,
 
         /// <summary>西元曆(DDMMYY)</summary>
         [System.ComponentModel.Description("西元曆(DDMMYY)")]
-        [Mapping("9")]
         [DateFormat(Type = DateEnums.Year.CE, Format = "ddMMyy")]
         CE_DDMMYY = 9,
 
         /// <summary>民國曆(MMYYY)</summary>
         [System.ComponentModel.Description("民國曆(MMYYY)")]
-        [Mapping("A")]
         [DateFormat(Type = DateEnums.Year.TW, Format = "MMyyy")]
         TW_MMYYY = 101,
 
         /// <summary>西元曆(MMYY)</summary>
         [System.ComponentModel.Description("西元曆(MMYY)")]
-        [Mapping("B")]
         [DateFormat(Type = DateEnums.Year.CE, Format = "MMyy")]
         CE_MMYY = 102,
 
         /// <summary>西元曆(YYYYMM)</summary>
         [System.ComponentModel.Description("西元曆(YYYYMM)")]
-        [Mapping("C")]
         [DateFormat(Type = DateEnums.Year.CE, Format = "yyyyMM")]
         CE_YYYYMM = 103,
 
         /// <summary>西元曆(MMYYYY)</summary>
         [System.ComponentModel.Description("西元曆(MMYYYY)")]
-        [Mapping("D")]
         [DateFormat(Type = DateEnums.Year.CE, Format = "MMyyyy")]
         CE_MMYYYY = 104,
         /// <summary>民國曆(YYMMDDHHS)</summary>
         [System.ComponentModel.Description("民國曆(YYMMDD)")]
-        [Mapping("999")]
         [DateFormat(Type = DateEnums.Year.TW, Format = "yyMMddHHmmss")]
         TW_YYMMDDHHmmss = 999,
     }
@@ -100,14 +87,12 @@ namespace ExtlLib.DateFormat.Extensions.Tests
             }
             int iCount = 0;
             int iPass = 0;
-            string msgErr = "";
             foreach (var dt in dtList)
             {
                 foreach (var iE1 in Enum.GetValues(typeof(DataFormat)))
                 {
                     DataFormat fmSet = (DataFormat)iE1;
                     string s = dt.ToDataFormat(fmSet);
-                    string x = dt.ToString("yyyymmdd");
 
                     foreach (var iE2 in Enum.GetValues(typeof(DataFormat)))
                     {
@@ -115,15 +100,11 @@ namespace ExtlLib.DateFormat.Extensions.Tests
                         string dss = s.ToDataFormat(fmSet, toSet);
                         DateTime? ds = dss.ToDateTime(toSet);
                         bool isPass = false;
-                        string msgOne = $"source {fmSet.MappingValue()} format:{fmSet.ToString()} value:{s} to {toSet.MappingValue()} format:{toSet.ToString()} value:{dss}";
                         if (ds == null || (ds.Value != dt && ds.Value.Day != 1))
                             isPass = false;
                         else
                             isPass = true;
-                        //Debug.WriteLine($"{(isPass ? "OK " : "Err")}  source {fmSet.MappingValue()} format:{fmSet.ToString()} value:{s} to {toSet.MappingValue()} format:{toSet.ToString()} value:{dss}");
-                        if (!isPass)
-                            msgErr += $"{msgOne}\r\n";
-                        else
+                        if (isPass)
                             iPass++;
                         iCount++;
                     }
@@ -131,6 +112,50 @@ namespace ExtlLib.DateFormat.Extensions.Tests
                 if (iPass != iCount)
                     Assert.Fail();
             }
+        }
+
+        [TestMethod()]
+        public void ToTWDateTimeTest()
+        {
+            if ("1061016171819".ToTWDateTime("yyyMMddHHmmss") != new DateTime(2017, 10, 16, 17, 18, 19))
+                Assert.Fail();
+            if ("891016171819".ToTWDateTime("yyyMMddHHmmss") != new DateTime(2000, 10, 16, 17, 18, 19))
+                Assert.Fail();
+            if ("890229".ToTWDateTime("yyMMdd") != new DateTime(2000, 2, 29))
+                Assert.Fail();
+            if ("022989".ToTWDateTime("MMddyy") != new DateTime(2000, 2, 29))
+                Assert.Fail();
+            if ("1016106".ToTWDateTime("MMddyyy") != new DateTime(2017, 10, 16))
+                Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void ToDateTimeTest()
+        {
+            if ("20171016171819".ToDateTime("yyyyMMddHHmmss") != new DateTime(2017, 10, 16, 17, 18, 19))
+                Assert.Fail();
+            if ("001016171819".ToDateTime("yyMMddHHmmss") != new DateTime(2000, 10, 16, 17, 18, 19))
+                Assert.Fail();
+            if ("001016".ToDateTime("yyMMdd") != new DateTime(2000, 10, 16))
+                Assert.Fail();
+            if ("101600".ToDateTime("MMddyy") != new DateTime(2000, 10, 16))
+                Assert.Fail();
+            if ("101617".ToDateTime("MMddyy") != new DateTime(2017, 10, 16))
+                Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void ToDataFormatTest1()
+        {
+            if ("191017".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY,DataFormat.TW_YYYYMMDD) != "01061019")
+                Assert.Fail();
+            if ("290200".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY, DataFormat.TW_YYYYMMDD) != "00890229")
+                Assert.Fail();
+
+            if ("191017".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY, DataFormat.TW_YYYMMDD) != "1061019")
+                Assert.Fail();
+            if ("290200".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY, DataFormat.TW_YYMMDD) != "890229")
+                Assert.Fail();
         }
     }
 }
