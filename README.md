@@ -3,6 +3,7 @@
 
 <H3>LyExtLib.Extensions.dll</H3>
 <H4>Sample code</H4>
+<p>using LyExtLib.Extensions;</p>
 <p>"a".ToWchr() => "ａ"</p>
 <p>"ａ".ToNchr() => "a"</p>
 <p>"!EWR$$!%我".ToEncodeBase64() => "IUVXUiQkISXmiJE="</p>
