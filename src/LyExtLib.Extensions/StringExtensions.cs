@@ -12,6 +12,25 @@ namespace LyExtLib.Extensions
     /// </summary>
     public static class StringExtensions
     {
+        public static string MaskString(this string source, char charMask, int start, int length, bool isWChar)
+        {
+            int startIndex = start - 1;
+            if (string.IsNullOrEmpty(source))
+                return source;
+            if (start < 1)
+                return source;
+            if (start > source.Length)
+                return source;
+            string strMask = "".PadRight(length, charMask);
+            if (isWChar)
+                strMask = strMask.ToWchr();
+            if (startIndex + length -1> source.Length)
+                return string.Format("{0}{1}", source.Substring(0, startIndex),
+                                                       strMask.Substring(0, source.Length - startIndex));
+            else
+                return string.Format("{0}{1}{2}", source.Substring(0, startIndex), strMask,
+                                                       source.Substring(startIndex + length , source.Length - startIndex - length));
+        }
         /// <summary>根據陣列中的字串分割字串成子字串。您可以指定子字串是否包含空的陣列元素。</summary>
         /// <param name="source">字串值</param>
         /// <param name="separators">字串陣列 (可分隔這個字串中的子字串)</param>

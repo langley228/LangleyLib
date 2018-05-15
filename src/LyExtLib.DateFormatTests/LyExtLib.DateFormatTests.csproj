@@ -22,9 +22,10 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\build\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
-    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <OutputPath>..\..\build\bin\$(AssemblyName)\$(Configuration)\</OutputPath>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).XML</DocumentationFile>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -32,9 +33,10 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\build\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
-    <OutputPath>..\..\bin\Release\</OutputPath>
+    <OutputPath>..\..\build\bin\$(AssemblyName)\$(Configuration)\</OutputPath>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).XML</DocumentationFile>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

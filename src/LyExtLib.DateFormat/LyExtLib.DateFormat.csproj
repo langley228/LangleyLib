@@ -16,39 +16,39 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\build\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
-    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <OutputPath>..\..\build\bin\$(AssemblyName)\$(Configuration)\</OutputPath>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).XML</DocumentationFile>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\bin\Debug\LyExtLib.DateFormat.xml</DocumentationFile>
     <PreBuildEvent>
-      MKDIR $(OutDir)..\..\dll\$(Configuration) /Q
-      del $(OutDir)..\..\dll\$(Configuration)\$(ProjectName).*
+      MKDIR $(OutDir)..\..\..\..\dll\$(Configuration) /Q
+      del $(OutDir)..\..\..\..\dll\$(Configuration)\$(ProjectName).*
     </PreBuildEvent>
     <PostBuildEvent>
-      Copy $(OutDir)$(ProjectName).dll $(OutDir)..\..\dll\$(Configuration)\
-      Copy $(OutDir)$(ProjectName).xml $(OutDir)..\..\dll\$(Configuration)\
+      Copy $(OutDir)$(ProjectName).dll $(OutDir)..\..\..\..\dll\$(Configuration)\
+      Copy $(OutDir)$(ProjectName).xml $(OutDir)..\..\..\..\dll\$(Configuration)\
     </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\build\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
-    <OutputPath>..\..\bin\Release\</OutputPath>
+    <OutputPath>..\..\build\bin\$(AssemblyName)\$(Configuration)\</OutputPath>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).XML</DocumentationFile>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\bin\Release\LyExtLib.DateFormat.xml</DocumentationFile>
     <PreBuildEvent>
-      MKDIR $(OutDir)..\..\dll\$(Configuration) /Q
-      del $(OutDir)..\..\dll\$(Configuration)\$(ProjectName).*
+      MKDIR $(OutDir)..\..\..\..\dll\$(Configuration) /Q
+      del $(OutDir)..\..\..\..\dll\$(Configuration)\$(ProjectName).*
     </PreBuildEvent>
     <PostBuildEvent>
-      Copy $(OutDir)$(ProjectName).dll $(OutDir)..\..\dll\$(Configuration)\
-      Copy $(OutDir)$(ProjectName).xml $(OutDir)..\..\dll\$(Configuration)\
+      Copy $(OutDir)$(ProjectName).dll $(OutDir)..\..\..\..\dll\$(Configuration)\
+      Copy $(OutDir)$(ProjectName).xml $(OutDir)..\..\..\..\dll\$(Configuration)\
     </PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
@@ -77,14 +77,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>MKDIR $(OutDir)..\..\dll\$(Configuration)
-del $(OutDir)..\..\dll\$(Configuration)\$(ProjectName).*
-</PreBuildEvent>
+    <PreBuildEvent>MKDIR $(TargetDir)..\..\..\..\dll\$(Configuration)
+del $(TargetDir)..\..\..\..\dll\$(Configuration)\$(ProjectName).*</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>Copy $(OutDir)$(ProjectName).dll $(OutDir)..\..\dll\$(Configuration)\
-Copy $(OutDir)$(ProjectName).xml $(OutDir)..\..\dll\$(Configuration)\
-</PostBuildEvent>
+    <PostBuildEvent>Copy $(TargetDir)$(ProjectName).dll $(TargetDir)..\..\..\..\dll\$(Configuration)\
+Copy $(TargetDir)$(ProjectName).xml $(TargetDir)..\..\..\..\dll\$(Configuration)\</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

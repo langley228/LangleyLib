@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace LyExtLib.Extensions.Tests
 {
@@ -39,6 +40,13 @@ namespace LyExtLib.Extensions.Tests
             int rs = 0;
             string s = "1,2,3,4,5".Substring(ref rs, 2);
             if (s != "1," || rs != 2)
+                Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void MaskStringTest()
+        {
+            if ("xxxx".MaskString('*',2,6, false) != "x***")
                 Assert.Fail();
         }
     }

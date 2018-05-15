@@ -21,7 +21,7 @@ namespace LyExtLib.Extensions
         /// <returns></returns>
         public static int ToIntValue<TEnum>(this TEnum self) where TEnum : struct, IConvertible
         {
-            return Convert.ToInt16(self);
+            return Convert.ToInt32(self);
         }
 
 
