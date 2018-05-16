@@ -7,6 +7,7 @@ LangleyLib.Extensions.dll
 LangleyLib.DateFormat.dll
 LangleyLib.VB6Extensions.dll
 LangleyLib.AdLib.dll
+LangleyLib.MailServerLib.dll
 ```
 
 
@@ -140,5 +141,35 @@ LangleyLib.AdLib.dll
                         Console.WriteLine("Email : {0}", item.Email);
                     }
                 }
+            }
+```
+
+
+<H3>LangleyLib.MailServerLib.dll</H3>
+<H4>LangleyLib.MailServerLib.dll.config Sample </H4>
+
+```
+      <add Key="Smtp" DisplayName="Smtp" Address="Smtp@Smtp.com" UserName="Smtp"
+         Password="" Host="127.0.0.1" Port="25" EnableSsl="false" />
+```
+
+<H4>using namespace</H4>
+   
+```
+    using LangleyLib.MailServerLib;
+```    
+
+<H4>Sample</H4> 
+
+```
+
+            SmtpSender send = null;
+            using (send = new SmtpSender("Smtp"))
+            {
+                string tomail = "yourmail@mailserver.com";
+                send.To.Add(tomail, "displayName");
+                send.Subject = "LangleyLib.MailServerLib Test";
+                send.Body = "LangleyLib.MailServerLib Test";
+                send.Send();
             }
 ```
