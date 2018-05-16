@@ -11,7 +11,7 @@ LangleyLib.AdLib.dll
 
 
 <H3>LangleyLib.Extensions.dll</H3>
-<H4>using</H4>
+<H4>using namespace</H4>
 
 ```
     using LangleyLib.Extensions;
@@ -28,7 +28,7 @@ LangleyLib.AdLib.dll
 
 
 <H3>LangleyLib.DateFormat.dll</H3>
-<H4>using</H4>
+<H4>using namespace</H4>
 
 ```
     using LangleyLib.DateFormat;
@@ -60,7 +60,7 @@ LangleyLib.AdLib.dll
 ```
     
 <H3>LangleyLib.VB6Extensions.dll</H3>
-<H4>using</H4>
+<H4>using namespace</H4>
 
 ```
     using LangleyLib.VB6Extensions;
@@ -86,7 +86,7 @@ LangleyLib.AdLib.dll
    Domain="domain" UserName="xxx" Password="xxx" >
 ```
 
-   <H4>using</H4>
+<H4>using namespace</H4>
    
 ```
     using LangleyLib.AdLib;
