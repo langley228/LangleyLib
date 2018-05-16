@@ -1,11 +1,11 @@
-# LyExtLib
+# LangleyLib
 
 
-<H3>LyExtLib.Extensions.dll</H3>
+<H3>LangleyLib.Extensions.dll</H3>
 <H4>Sample code</H4>
 
 
-    using LyExtLib.Extensions;
+    using LangleyLib.Extensions;
     "a".ToWchr() => "ａ"
     "ａ".ToNchr() => "a"
     "!EWR$$!%我".ToEncodeBase64() => "IUVXUiQkISXmiJE="
@@ -13,13 +13,13 @@
 
 
 
-<H3>LyExtLib.DateFormat.dll</H3>
+<H3>LangleyLib.DateFormat.dll</H3>
 <H4>Sample code</H4>
 
 
-    using LyExtLib.DateFormat;
-    using LyExtLib.DateFormat.Attributes;
-    using LyExtLib.DateFormat.Enums;
+    using LangleyLib.DateFormat;
+    using LangleyLib.DateFormat.Attributes;
+    using LangleyLib.DateFormat.Enums;
     
     
 <P><B>Create enum</B></p>
@@ -41,10 +41,10 @@
     "290200".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY, DataFormat.TW_YYMMDD) => "890229"
     
     
-<H3>LyExtLib.VB6Extensions.dll</H3>
+<H3>LangleyLib.VB6Extensions.dll</H3>
 <H4>Sample code</H4>
 
-    using LyExtLib.VB6Extensions;
+    using LangleyLib.VB6Extensions;
     "A你B我C他".VBMid(4) => "我C他"
     "A你B我C他".VBMid(2, 4) => "你B我C"
     "A你B我C他".VBLeft(4) => "A你B我"
