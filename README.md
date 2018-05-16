@@ -11,10 +11,15 @@ LangleyLib.AdLib.dll
 
 
 <H3>LangleyLib.Extensions.dll</H3>
-<H4>Sample code</H4>
+<H4>using</H4>
 
 ```
     using LangleyLib.Extensions;
+```
+
+<H4>Sample code</H4>
+
+```
     "a".ToWchr() => "ａ"
     "ａ".ToNchr() => "a"
     "!EWR$$!%我".ToEncodeBase64() => "IUVXUiQkISXmiJE="
@@ -23,14 +28,13 @@ LangleyLib.AdLib.dll
 
 
 <H3>LangleyLib.DateFormat.dll</H3>
-<H4>Sample code</H4>
+<H4>using</H4>
 
 ```
     using LangleyLib.DateFormat;
     using LangleyLib.DateFormat.Attributes;
     using LangleyLib.DateFormat.Enums;
-```
-    
+```    
     
 <P><B>Create enum</B></p>
 
@@ -46,18 +50,25 @@ LangleyLib.AdLib.dll
         [DateFormat(Type = DateEnums.Year.CE, Format = "yyyyMMdd")]
         CE_YYYYMMDD = 4,
     }
+```
+  
+<H4>Sample code</H4>  
     
-    
+```
     "191017".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY, DataFormat.TW_YYYMMDD) => "1061019"
     "290200".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY, DataFormat.TW_YYMMDD) => "890229"
-    
 ```
     
 <H3>LangleyLib.VB6Extensions.dll</H3>
-<H4>Sample code</H4>
+<H4>using</H4>
 
 ```
     using LangleyLib.VB6Extensions;
+```    
+
+<H4>Sample code</H4>
+
+```
     "A你B我C他".VBMid(4) => "我C他"
     "A你B我C他".VBMid(2, 4) => "你B我C"
     "A你B我C他".VBLeft(4) => "A你B我"
@@ -74,7 +85,13 @@ LangleyLib.AdLib.dll
    <add Key="LDAP" AdType="LDAP" Path="LDAP://127.0.0.1:389/DC=domain,DC=com" 
    Domain="domain" UserName="xxx" Password="xxx" >
 ```
+
+   <H4>using</H4>
    
+```
+    using LangleyLib.AdLib;
+```    
+
 <H4>Model Sample</H4>
 
 ```
