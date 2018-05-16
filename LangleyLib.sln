@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LangleyLib.VB6Extensions", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LangleyLib.VB6ExtensionsTests", "src\LangleyLib.VB6ExtensionsTests\LangleyLib.VB6ExtensionsTests.csproj", "{9D7F04E0-1648-4064-9782-BAD7E8D8C1C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LangleyLib.AdLib", "src\LangleyLib.AdLib\LangleyLib.AdLib.csproj", "{A3C14C7C-BF11-42BB-983B-69B14D2FA3B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LangleyLib.AdLib.Sample", "src\LangleyLib.AdLib.Sample\LangleyLib.AdLib.Sample.csproj", "{66160704-E3D8-45C5-9471-9473A959B53C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{9D7F04E0-1648-4064-9782-BAD7E8D8C1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D7F04E0-1648-4064-9782-BAD7E8D8C1C2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9D7F04E0-1648-4064-9782-BAD7E8D8C1C2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A3C14C7C-BF11-42BB-983B-69B14D2FA3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C14C7C-BF11-42BB-983B-69B14D2FA3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C14C7C-BF11-42BB-983B-69B14D2FA3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C14C7C-BF11-42BB-983B-69B14D2FA3B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66160704-E3D8-45C5-9471-9473A959B53C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66160704-E3D8-45C5-9471-9473A959B53C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66160704-E3D8-45C5-9471-9473A959B53C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66160704-E3D8-45C5-9471-9473A959B53C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
