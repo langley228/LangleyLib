@@ -61,12 +61,14 @@
 
 <H3>LangleyLib.AdLib.dll</H3>
 <H4>LangleyLib.AdLib.dll.config Sample </H4>
+
 ```
    <add Key="LDAP" AdType="LDAP" Path="LDAP://127.0.0.1:389/DC=domain,DC=com" 
    Domain="domain" UserName="xxx" Password="xxx" >
 ```
    
 <H4>Model Sample</H4>
+
 ```
     public class LDAPUser
     {
@@ -80,6 +82,7 @@
 ```
 
 <H4>Service Sample</H4> 
+
 ```
     public class LDAPADService : AdServiceBase
     {
@@ -96,6 +99,7 @@
 ```    
 
 <H4>Sample Code</H4> 
+
 ```
             using (var ad = new LDAPADService("LDAP"))
             {
