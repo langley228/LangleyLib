@@ -17,7 +17,7 @@ LangleyLib.AdLib.dll
     using LangleyLib.Extensions;
 ```
 
-<H4>Sample code</H4>
+<H4>Sample</H4>
 
 ```
     "a".ToWchr() => "ａ"
@@ -52,7 +52,7 @@ LangleyLib.AdLib.dll
     }
 ```
   
-<H4>Sample code</H4>  
+<H4>Sample</H4>  
     
 ```
     "191017".ToDataFormat<DataFormat>(DataFormat.CE_DDMMYY, DataFormat.TW_YYYMMDD) => "1061019"
@@ -66,7 +66,7 @@ LangleyLib.AdLib.dll
     using LangleyLib.VB6Extensions;
 ```    
 
-<H4>Sample code</H4>
+<H4>Sample</H4>
 
 ```
     "A你B我C他".VBMid(4) => "我C他"
@@ -123,7 +123,7 @@ LangleyLib.AdLib.dll
     }
 ```    
 
-<H4>Sample Code</H4> 
+<H4>Sample</H4> 
 
 ```
             using (var ad = new LDAPADService("LDAP"))
@@ -140,6 +140,5 @@ LangleyLib.AdLib.dll
                         Console.WriteLine("Email : {0}", item.Email);
                     }
                 }
-
             }
 ```
