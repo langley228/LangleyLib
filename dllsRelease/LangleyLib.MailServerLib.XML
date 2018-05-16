@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LangleyLib.MailServerLib</name>
+    </assembly>
+    <members>
+        <member name="P:LangleyLib.MailServerLib.Configuration.MailServerConfig.Config">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Configuration.MailServerConfig.GetSetting(System.String,System.String)">
+            <summary>      
+            取得 AppSetting 設定值
+            </summary>
+            <param name="key"></param>
+            <param name="defValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Configuration.MailServerConfig.GetSmtpSetting(System.String)">
+            <summary>
+            取得AD 設定檔
+            </summary>
+            <param name="settingKey">key</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Models.AttachmentCollection.Add(System.String)">
+            <summary>
+            增加夾檔
+            </summary>
+            <param name="fileName">檔案</param>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Models.AttachmentCollection.Add(System.String,System.String)">
+            <summary>
+            增加夾檔
+            </summary>
+            <param name="fileName">檔案</param>
+            <param name="displayName">顯示的名稱</param>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Models.MailAddressCollection.AddRange(System.String)">
+            <summary>增加 Mail</summary>
+            <param name="mail">多筆 Mail (預設分割符號 ',' ';' )</param>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Models.MailAddressCollection.AddRange(System.String,System.Char[])">
+            <summary>增加 Mail</summary>
+            <param name="mail">多筆 Mail (預設)</param>
+            <param name="separator">分割符號陣列</param>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Models.MailAddressCollection.AddRange(System.String[])">
+            <summary>增加 Mail</summary>
+            <param name="aryMail">Mail陣列</param>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Models.MailAddressCollection.Add(System.String)">
+            <summary>增加 Mail</summary>
+            <param name="address">Mail</param>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Models.MailAddressCollection.Add(System.String,System.String)">
+            <summary>增加 Mail</summary>
+            <param name="address">Email Address</param>
+            <param name="displayName">顯示的名稱</param>
+        </member>
+        <member name="T:LangleyLib.MailServerLib.SmtpSender">
+            <summary>
+            SmtpSender
+            </summary>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.#ctor(System.String)">
+            <summary>
+            建構子: SmtpSender
+            </summary>
+            <param name="settingkey">Smtp 設定檔 Key</param>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.#ctor(LangleyLib.MailServerLib.Configuration.SmtpSetting)">
+            <summary>
+            建構子: SmtpSender
+            </summary>
+            <param name="setting">Smtp 設定檔</param>
+        </member>
+        <member name="P:LangleyLib.MailServerLib.SmtpSender.SmtpSetting">
+            <summary>Server設定</summary>
+        </member>
+        <member name="P:LangleyLib.MailServerLib.SmtpSender.To">
+            <summary>收信人清單</summary>
+        </member>
+        <member name="P:LangleyLib.MailServerLib.SmtpSender.Cc">
+            <summary>副本清單</summary>
+        </member>
+        <member name="P:LangleyLib.MailServerLib.SmtpSender.Bcc">
+            <summary>密件副本清單</summary>
+        </member>
+        <member name="P:LangleyLib.MailServerLib.SmtpSender.Subject">
+            <summary>主旨</summary>
+        </member>
+        <member name="P:LangleyLib.MailServerLib.SmtpSender.Body">
+            <summary>內容</summary>
+        </member>
+        <member name="P:LangleyLib.MailServerLib.SmtpSender.Encoding">
+            <summary>編碼</summary>
+        </member>
+        <member name="P:LangleyLib.MailServerLib.SmtpSender.IsBodyHtml">
+            <summary>是否為Html格式</summary>
+        </member>
+        <member name="P:LangleyLib.MailServerLib.SmtpSender.Attachments">
+            <summary>夾檔</summary>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.IsValid(System.String)">
+            <summary>
+            檢核email格式
+            </summary>
+            <param name="emailAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.Clear">
+            <summary>
+            清空 收件 CC 夾檔
+            </summary>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.Send">
+            <summary>
+            寄信方法
+            </summary>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.Send(LangleyLib.MailServerLib.Configuration.SmtpSetting)">
+            <summary>
+            寄信方法
+            </summary>
+            <param name="smtpSetting">Server設定</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.Send(System.String,System.String)">
+            <summary>
+            寄信方法
+            </summary>
+            <param name="mailTos">收信人Email Address</param>
+            <param name="mailCcs">副本Email Address</param>
+            <param name="subject">主旨</param>
+            <param name="body">內文</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.Send(LangleyLib.MailServerLib.Configuration.SmtpSetting,System.String,System.String)">
+            <summary>
+            寄信方法
+            </summary>
+            <param name="smtpSetting">Server設定</param>
+            <param name="mailTos">收信人Email Address</param>
+            <param name="mailCcs">副本Email Address</param>
+            <param name="subject">主旨</param>
+            <param name="body">內文</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.Send(System.String,System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            寄信方法
+            </summary>
+            <param name="mailTos">收信人Email Address</param>
+            <param name="mailCcs">副本Email Address</param>
+            <param name="subject">主旨</param>
+            <param name="body">內文</param>
+            <param name="encoding">編碼</param>
+            <param name="isBodyHtml">是否為Html格式</param>
+            <param name="files">要夾帶的附檔</param>
+            <returns>回傳寄信是否成功(true:成功,false:失敗)</returns>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.Send(LangleyLib.MailServerLib.Configuration.SmtpSetting,System.String,System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            寄信方法
+            </summary>
+            <param name="smtpSetting">Server設定</param>
+            <param name="mailTos">收信人Email Address</param>
+            <param name="mailCcs">副本Email Address</param>
+            <param name="subject">主旨</param>
+            <param name="body">內文</param>
+            <param name="encoding">編碼</param>
+            <param name="isBodyHtml">是否為Html格式</param>
+            <param name="files">要夾帶的附檔</param>
+            <returns>回傳寄信是否成功(true:成功,false:失敗)</returns>
+        </member>
+    </members>
+</doc>
