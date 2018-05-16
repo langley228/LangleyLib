@@ -92,7 +92,7 @@ LangleyLib.AdLib.dll
     using LangleyLib.AdLib;
 ```    
 
-<H4>Model Sample</H4>
+<H4>Model</H4>
 
 ```
     public class LDAPUser
@@ -106,7 +106,7 @@ LangleyLib.AdLib.dll
     }
 ```
 
-<H4>Service Sample</H4> 
+<H4>Service</H4> 
 
 ```
     public class LDAPADService : AdServiceBase
