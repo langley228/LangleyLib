@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LangleyLib.AdLib</name>
+    </assembly>
+    <members>
+        <member name="T:LangleyLib.AdLib.AdServiceBase">
+            <summary>
+            用來存取 AD 資料的 抽象類別
+            </summary>
+        </member>
+        <member name="F:LangleyLib.AdLib.AdServiceBase.m_Setting">
+            <summary>
+            AD 設定檔
+            </summary>
+        </member>
+        <member name="F:LangleyLib.AdLib.AdServiceBase.m_Root">
+            <summary>
+            AD 網域服務階層
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AdLib.AdServiceBase.#ctor(System.String)">
+            <summary>
+            建構子: 用來存取 AD 資料的 抽象類別
+            </summary>
+            <param name="settingkey">AD 設定檔 Key</param>
+        </member>
+        <member name="M:LangleyLib.AdLib.AdServiceBase.#ctor(LangleyLib.AdLib.Configuration.AdSetting)">
+            <summary>
+            建構子: 用來存取 AD 資料的 抽象類別
+            </summary>
+            <param name="setting">AD 設定檔</param>
+        </member>
+        <member name="P:LangleyLib.AdLib.AdServiceBase.Setting">
+            <summary>
+            AD 設定檔
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.AdServiceBase.Root">
+            <summary>
+            AD 網域服務階層
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AdLib.AdServiceBase.Dispose">
+            <summary>
+            釋放 資源
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AdLib.AdServiceBase.CreateAdSet``1(System.String[])">
+            <summary>   
+            產生 AdSet
+            </summary>                       
+            <typeparam name="T">Mdoel 型別</typeparam> 
+            <param name="classFilterOrNames">
+            過濾 LDAP   的  classFilter 
+                不過濾(預設) : "(objectClass=*)" , 只找 AD User : "(objectClass=user)(objectCategory=person)"
+            過濾 WinNT  的  className  
+                不過濾(預設) : "" 或 不需傳入 , 只找 AD User : "USER"
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:LangleyLib.AdLib.AdSetBase`1">
+            <summary>
+            用來 存取 T型別 AD資料 的抽象類別
+            </summary>
+            <typeparam name="T">Mdoel 型別</typeparam>
+        </member>
+        <member name="F:LangleyLib.AdLib.AdSetBase`1.m_AdService">
+            <summary>
+            用來存取的 AdService 介面
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AdLib.AdSetBase`1.FindAll">
+            <summary>
+            尋找 所有 T型別 AD資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.AdSetBase`1.FindAll(System.String,System.Object)">
+            <summary>
+            尋找 多筆 T型別 AD資料
+            </summary>                          
+            <param name="propName">屬性/攔位 名稱</param>    
+            <param name="propValue">屬性/攔位 值</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.AdSetBase`1.FindOne(System.String)">
+            <summary>
+            尋找 一筆 T型別 AD資料
+            </summary>                          
+            <param name="userName">帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.AdSetBase`1.FindOne(System.String,System.Object)">
+            <summary>
+            尋找 一筆 T型別 AD資料
+            </summary>                          
+            <param name="propName">屬性/攔位 名稱</param>    
+            <param name="propValue">屬性/攔位 值</param>
+            <returns></returns>
+        </member>
+        <member name="T:LangleyLib.AdLib.PropertyAttribute">
+            <summary>
+            標示 Model 的 屬性 所對應的 AD 欄位
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AdLib.PropertyAttribute.#ctor(LangleyLib.AdLib.AdType,System.String)">
+            <summary>
+            建構子 : 標示 Model 的 屬性 所對應的 AD 欄位
+            </summary>
+            <param name="adType">AD 伺服器類型</param>
+            <param name="propName">AD 欄位名稱</param>
+        </member>
+        <member name="P:LangleyLib.AdLib.PropertyAttribute.PropName">
+            <summary>
+            AD 欄位名稱
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.PropertyAttribute.AdType">
+            <summary>
+            AD 伺服器類型
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.Configuration.AdConfig.Config">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AdLib.Configuration.AdConfig.GetSetting(System.String,System.String)">
+            <summary>      
+            取得 AppSetting 設定值
+            </summary>
+            <param name="key"></param>
+            <param name="defValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.Configuration.AdConfig.GetAdSetting(System.String)">
+            <summary>
+            取得AD 設定檔
+            </summary>
+            <param name="settingKey">key</param>
+            <returns></returns>
+        </member>
+        <member name="T:LangleyLib.AdLib.Configuration.AdServer">
+            <summary>
+            AD 組態檔區段
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.Configuration.AdServer.AdSettings">
+            <summary>
+            AD 設定檔 集合
+            </summary>
+        </member>
+        <member name="T:LangleyLib.AdLib.Configuration.AdSetting">
+            <summary>
+            AD 設定檔
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.Configuration.AdSetting.Key">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.Configuration.AdSetting.AdType">
+            <summary>
+            AD 伺服器類型
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.Configuration.AdSetting.Path">
+            <summary>
+            AD Path (類似URL的路徑)
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.Configuration.AdSetting.Domain">
+            <summary>
+            網域名稱
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.Configuration.AdSetting.UserName">
+            <summary>
+            要在驗證用戶端時使用的使用者名稱
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.Configuration.AdSetting.Password">
+            <summary>
+            要在驗證用戶端時使用的使用者密碼
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.Configuration.AdSetting.DomainUser">
+            <summary>
+            網域+帳號
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AdLib.Configuration.AdSetting.GetDomainUser(System.String,System.String)">
+            <summary>
+            取得 網域+帳號
+            </summary>
+        </member>
+        <member name="T:LangleyLib.AdLib.Configuration.AdSettingCollection">
+            <summary>
+            AD 設定檔 集合
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.Configuration.AdSettingCollection.Item(System.String)">
+            <summary>
+            AD 設定檔
+            </summary>
+            <param name="key">AD 設定檔 key</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.Configuration.AdSettingCollection.CreateNewElement">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.Configuration.AdSettingCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LangleyLib.AdLib.AdType">
+            <summary>
+            AD 伺服器類型 
+            </summary>
+        </member>
+        <member name="F:LangleyLib.AdLib.AdType.WinNT">
+            <summary>
+            WinNT
+            </summary>
+        </member>
+        <member name="F:LangleyLib.AdLib.AdType.LDAP">
+            <summary>
+            LDAP
+            </summary>
+        </member>
+        <member name="T:LangleyLib.AdLib.IAdService">
+            <summary>  
+            用來存取 AD 資料的 介面
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.IAdService.Setting">
+            <summary>
+            AD 設定檔
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AdLib.IAdService.Root">
+            <summary>
+            AD 網域服務階層
+            </summary>
+        </member>
+        <member name="T:LangleyLib.AdLib.IAdSet`1">
+            <summary>
+            用來 存取 T型別 AD資料 的介面
+            </summary>
+            <typeparam name="T">Mdoel 型別</typeparam>
+        </member>
+        <member name="M:LangleyLib.AdLib.IAdSet`1.FindAll">
+            <summary>
+            尋找 所有 T型別 AD資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.IAdSet`1.FindAll(System.String,System.Object)">
+            <summary>
+            尋找 多筆 T型別 AD資料
+            </summary>                          
+            <param name="propName">屬性/攔位 名稱</param>    
+            <param name="propValue">屬性/攔位 值</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.IAdSet`1.FindOne(System.String)">
+            <summary>
+            尋找 一筆 T型別 AD資料
+            </summary>                          
+            <param name="userName">帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.IAdSet`1.FindOne(System.String,System.Object)">
+            <summary>
+            尋找 一筆 T型別 AD資料
+            </summary>                          
+            <param name="propName">屬性/攔位 名稱</param>    
+            <param name="propValue">屬性/攔位 值</param>
+            <returns></returns>
+        </member>
+        <member name="T:LangleyLib.AdLib.LDAPAdSet`1">
+            <summary>
+            用來 AD 資料 物件化的 T 型別 (LDAP 專用)
+            </summary>
+            <typeparam name="T">Mdoel 型別</typeparam>
+        </member>
+        <member name="M:LangleyLib.AdLib.LDAPAdSet`1.#ctor(LangleyLib.AdLib.IAdService,System.String[])">
+            <summary>
+            建構子 : 用來 AD 資料 物件化的 T 型別 (LDAP 專用)
+            </summary>                        
+            <param name="adService">用來存取的 AdService 介面</param>
+            <param name="classFilters">                                   
+            過濾 LDAP   的  classFilter 
+                不過濾(預設) : "(objectClass=*)" , 只找 AD User : "(objectClass=user)(objectCategory=person)"
+            </param>
+        </member>
+        <member name="M:LangleyLib.AdLib.LDAPAdSet`1.FindAll">
+            <summary>
+            尋找 所有 T型別 AD資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.LDAPAdSet`1.FindAll(System.String,System.Object)">
+            <summary>
+            
+            尋找 多筆 T型別 AD資料
+            </summary>                          
+            <param name="propName">屬性/攔位 名稱</param>    
+            <param name="propValue">屬性/攔位 值</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.LDAPAdSet`1.FindOne(System.String)">
+            <summary>
+            尋找 一筆 T型別 AD資料
+            </summary>                          
+            <param name="userName">帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.LDAPAdSet`1.FindOne(System.String,System.Object)">
+            <summary>
+            尋找 一筆 T型別 AD資料
+            </summary>                          
+            <param name="propName">屬性/攔位 名稱</param>    
+            <param name="propValue">屬性/攔位 值</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.LDAPAdSet`1.FindAllByFilter(System.String)">
+            <summary>
+            依 搜尋篩選條件字串 尋找 多筆 AD 帳號資訊
+            </summary>
+            <param name="setFilter">LDAP 格式的搜尋篩選條件字串，例如，"(objectClass=user)".。預設為「(objectClass=*)」，表示擷取所有物件。</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.LDAPAdSet`1.FindOneByFilter(System.String)">
+            <summary>
+            依 搜尋篩選條件字串 尋找 一筆 AD 帳號
+            </summary>                          
+            <param name="setFilter">LDAP 格式的搜尋篩選條件字串，例如，"(objectClass=user)".。預設為「(objectClass=*)」，表示擷取所有物件。</param>
+            <returns></returns>
+        </member>
+        <member name="T:LangleyLib.AdLib.WinNTAdSet`1">
+            <summary>
+            用來 AD 資料 物件化的 T 型別 (WinNT 專用)
+            </summary>
+            <typeparam name="T">Mdoel 型別</typeparam>
+        </member>
+        <member name="M:LangleyLib.AdLib.WinNTAdSet`1.#ctor(LangleyLib.AdLib.IAdService,System.String[])">
+            <summary>
+            建構子 : 用來 AD 資料 物件化的 T 型別 (WinNT 專用)
+            </summary>                        
+            <param name="adService">用來存取的 AdService 介面</param>
+            <param name="classNames">
+            過濾 WinNT  的  className  
+                不過濾(預設) : "" 或 不需傳入 , 只找 AD User : "USER"
+            </param>
+        </member>
+        <member name="M:LangleyLib.AdLib.WinNTAdSet`1.FindAll">
+            <summary>
+            尋找 所有 T型別 AD資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.WinNTAdSet`1.FindAll(System.String,System.Object)">
+            <summary>
+            尋找 多筆 T型別 AD資料
+            </summary>                          
+            <param name="propName">屬性/攔位 名稱</param>    
+            <param name="propValue">屬性/攔位 值</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.WinNTAdSet`1.FindOne(System.String)">
+            <summary>
+            尋找 一筆 T型別 AD資料
+            </summary>                          
+            <param name="userName">帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.WinNTAdSet`1.FindOne(System.String,System.Object)">
+            <summary>
+            尋找 一筆 T型別 AD資料
+            </summary>                          
+            <param name="propName">屬性/攔位 名稱</param>    
+            <param name="propValue">屬性/攔位 值</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.WinNTAdSet`1.FindAllByProp(System.String,System.Object,System.Boolean)">
+            <summary>
+            尋找 AD 帳號資訊
+            </summary>                          
+            <param name="propName">屬性/攔位 名稱</param>    
+            <param name="propValue">屬性/攔位 值</param>  
+            <param name="bFindOne">是否只找一筆</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

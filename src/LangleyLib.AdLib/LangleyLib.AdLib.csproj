@@ -20,7 +20,7 @@
     <BaseIntermediateOutputPath>..\..\build\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
     <OutputPath>..\..\build\bin\$(AssemblyName)\$(Configuration)\</OutputPath>
-    <DocumentationFile>..\..\build\bin\LyAdLib\Debug\LangleyLib.AdLib.xml</DocumentationFile>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).XML</DocumentationFile>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,6 +31,7 @@
     <BaseIntermediateOutputPath>..\..\build\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
     <OutputPath>..\..\build\bin\$(AssemblyName)\$(Configuration)\</OutputPath>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).XML</DocumentationFile>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

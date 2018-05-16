@@ -19,7 +19,7 @@
     <BaseIntermediateOutputPath>..\..\build\obj\$(AssemblyName)\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
     <OutputPath>..\..\build\bin\$(AssemblyName)\$(Configuration)\</OutputPath>
-    <DocumentationFile>..\..\build\bin\LyExtLib.VB6Extensions\Debug\LangleyLib.VB6Extensions.xml</DocumentationFile>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).XML</DocumentationFile>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
