@@ -36,7 +36,7 @@ LangleyLib.AdLib.dll
     using LangleyLib.DateFormat.Enums;
 ```    
     
-<P><B>enum</B></p>
+<P><B>Custom enum</B></p>
 
 ```
     public enum DataFormat
@@ -92,7 +92,7 @@ LangleyLib.AdLib.dll
     using LangleyLib.AdLib;
 ```    
 
-<H4>Model</H4>
+<H4>Custom Model</H4>
 
 ```
     public class LDAPUser
@@ -106,7 +106,7 @@ LangleyLib.AdLib.dll
     }
 ```
 
-<H4>Service</H4> 
+<H4>Custom Service</H4> 
 
 ```
     public class LDAPADService : AdServiceBase
