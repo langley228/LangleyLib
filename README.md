@@ -11,20 +11,22 @@
     "ａ".ToNchr() => "a"
     "!EWR$$!%我".ToEncodeBase64() => "IUVXUiQkISXmiJE="
     "Hello world".ToHexEncrypt() => "48656C6C6F20776F726C64"
-
+```
 
 
 <H3>LangleyLib.DateFormat.dll</H3>
 <H4>Sample code</H4>
 
-
+```
     using LangleyLib.DateFormat;
     using LangleyLib.DateFormat.Attributes;
     using LangleyLib.DateFormat.Enums;
+```
     
     
 <P><B>Create enum</B></p>
 
+```
     public enum DataFormat
     {
         [DateFormat(Type = DateEnums.Year.TW, Format = "yyMMdd")]
