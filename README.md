@@ -59,7 +59,7 @@
     1.VBSpace() => " "
 ```
 
-# LyAdLib.dll.config 設定範例
+# LangleyLib.AdLib.dll.config 設定範例
 ```
    <add Key="LDAP" AdType="LDAP" Path="LDAP://127.0.0.1:389/DC=domain,DC=com" 
    Domain="domain" UserName="xxx" Password="xxx" >
