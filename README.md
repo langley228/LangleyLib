@@ -36,7 +36,7 @@ LangleyLib.AdLib.dll
     using LangleyLib.DateFormat.Enums;
 ```    
     
-<P><B>Create enum</B></p>
+<P><B>enum</B></p>
 
 ```
     public enum DataFormat
