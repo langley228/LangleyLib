@@ -7,18 +7,25 @@ using System.Threading.Tasks;
 
 namespace LangleyLib.AdLib.Configuration
 {
+    /// <summary>
+    /// AdConfig
+    /// </summary>
     public class AdConfig
     {
         private System.Configuration.Configuration m_Config;
         private AppSettingsSection m_AppSettings;
-        private string m_Filename = typeof(AdConfig).Module.Name;
+        private string m_ModuleName = typeof(AdConfig).Module.Name;
+        private string m_FileName;
         internal AdConfig()
-            : this(typeof(AdConfig).Module.Name)
+            : this(string.Empty)
         {
         }
         internal AdConfig(string filename)
         {
-            m_Filename = filename;
+            if (string.IsNullOrEmpty(filename))
+                m_FileName = GetModuleConfigPath();
+            else
+                m_FileName = filename;
             m_AppSettings = Config.AppSettings;
         }
 
@@ -30,11 +37,20 @@ namespace LangleyLib.AdLib.Configuration
             get
             {
                 ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();
-                string path = string.Format(@"{0}\{1}.config", System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase, m_Filename);
-                fileMap.ExeConfigFilename = path;
+                fileMap.ExeConfigFilename = m_FileName;
                 return m_Config ?? (m_Config = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None));
             }
         }
+
+        /// <summary>
+        /// MailServer 模組 (dll) 的 config 路徑
+        /// </summary>
+        /// <returns></returns>
+        private string GetModuleConfigPath()
+        {
+            return string.Format(@"{0}\{1}.config", System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase, m_ModuleName);
+        }
+
         /// <summary>      
         /// 取得 AppSetting 設定值
         /// </summary>

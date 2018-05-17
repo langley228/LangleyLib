@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LangleyLib.AdLib", "src\Lan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LangleyLib.AdLib.Sample", "src\LangleyLib.AdLib.Sample\LangleyLib.AdLib.Sample.csproj", "{66160704-E3D8-45C5-9471-9473A959B53C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LangleyLib.MailServerLib", "src\LangleyLib.MailServerLib\LangleyLib.MailServerLib.csproj", "{1DD7F7DD-41EA-4F43-BC92-96C1E1F87A18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LangleyLib.MailServerLib.Sample", "src\LangleyLib.MailServerLib.Sample\LangleyLib.MailServerLib.Sample.csproj", "{7BF4B541-81A7-4C53-A17D-3E2A46587F1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,14 @@ Global
 		{66160704-E3D8-45C5-9471-9473A959B53C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66160704-E3D8-45C5-9471-9473A959B53C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66160704-E3D8-45C5-9471-9473A959B53C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD7F7DD-41EA-4F43-BC92-96C1E1F87A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD7F7DD-41EA-4F43-BC92-96C1E1F87A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD7F7DD-41EA-4F43-BC92-96C1E1F87A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD7F7DD-41EA-4F43-BC92-96C1E1F87A18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BF4B541-81A7-4C53-A17D-3E2A46587F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF4B541-81A7-4C53-A17D-3E2A46587F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF4B541-81A7-4C53-A17D-3E2A46587F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF4B541-81A7-4C53-A17D-3E2A46587F1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

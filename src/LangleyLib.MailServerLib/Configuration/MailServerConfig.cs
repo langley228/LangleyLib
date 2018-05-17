@@ -7,18 +7,25 @@ using System.Threading.Tasks;
 
 namespace LangleyLib.MailServerLib.Configuration
 {
+    /// <summary>
+    /// MailServerConfig
+    /// </summary>
     public class MailServerConfig
     {
         private System.Configuration.Configuration m_Config;
         private AppSettingsSection m_AppSettings;
-        private string m_Filename = typeof(MailServerConfig).Module.Name;
+        private string m_ModuleName = typeof(MailServerConfig).Module.Name;
+        private string m_FileName;
         internal MailServerConfig()
-            : this(typeof(MailServerConfig).Module.Name)
+            : this(string.Empty)
         {
         }
         internal MailServerConfig(string filename)
         {
-            m_Filename = filename;
+            if (string.IsNullOrEmpty(filename))
+                m_FileName = GetModuleConfigPath();
+            else
+                m_FileName = filename;
             m_AppSettings = Config.AppSettings;
         }
 
@@ -30,11 +37,20 @@ namespace LangleyLib.MailServerLib.Configuration
             get
             {
                 ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();
-                string path = string.Format(@"{0}\{1}.config", System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase, m_Filename);
-                fileMap.ExeConfigFilename = path;
+                fileMap.ExeConfigFilename = m_FileName;
                 return m_Config ?? (m_Config = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None));
             }
         }
+
+        /// <summary>
+        /// MailServer 模組 (dll) 的 config 路徑
+        /// </summary>
+        /// <returns></returns>
+        private string GetModuleConfigPath()
+        {
+            return string.Format(@"{0}\{1}.config", System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase, m_ModuleName);
+        }
+
         /// <summary>      
         /// 取得 AppSetting 設定值
         /// </summary>

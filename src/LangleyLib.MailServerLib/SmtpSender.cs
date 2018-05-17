@@ -280,6 +280,9 @@ namespace LangleyLib.MailServerLib
 
         #endregion
 
+        /// <summary>
+        /// 釋放 資源
+        /// </summary>
         public void Dispose()
         {
             this.Clear();
