@@ -11,7 +11,7 @@ namespace LangleyLib.MailServerLib.Sample
     {
         static void Main(string[] args)
         {
-            //Configuration.ConfigManager.SetConfig("xxx.config");
+            Configuration.ConfigManager.SetConfig("xxx.config");
             SmtpSender send = null;
             using (send = new SmtpSender("Smtp"))
             {
