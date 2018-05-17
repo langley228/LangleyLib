@@ -37,9 +37,19 @@ namespace LangleyLib.MailServerLib.Models
                 m_Attachments[fileName].DisplayName = displayName;
             }
         }
-        public Dictionary<string, Attachment>.ValueCollection Attachments
+        /// <summary>
+        ///  所有夾檔
+        /// </summary>
+        public Dictionary<string, Attachment>.ValueCollection Values
         {
             get { return m_Attachments.Values; }
+        }
+        /// <summary>
+        /// 所有key (檔案路徑)
+        /// </summary>
+        public Dictionary<string, Attachment>.KeyCollection FileNames
+        {
+            get { return m_Attachments.Keys; }
         }
         public void Clear() { m_Attachments.Clear(); }
 

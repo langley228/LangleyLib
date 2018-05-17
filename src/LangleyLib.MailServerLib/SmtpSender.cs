@@ -259,7 +259,7 @@ namespace LangleyLib.MailServerLib
             }
 
             //附件處理    
-            foreach (var attachment in m_Attachments.Attachments)
+            foreach (var attachment in m_Attachments.Values)
             {
                 Attachment attfile = new Attachment(attachment.FileName);
                 if (!string.IsNullOrEmpty(attachment.DisplayName))

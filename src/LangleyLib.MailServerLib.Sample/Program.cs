@@ -11,7 +11,7 @@ namespace LangleyLib.MailServerLib.Sample
     {
         static void Main(string[] args)
         {
-
+            //Configuration.ConfigManager.SetConfig("xxx.config");
             SmtpSender send = null;
             using (send = new SmtpSender("Smtp"))
             {
@@ -19,6 +19,7 @@ namespace LangleyLib.MailServerLib.Sample
                 send.To.Add(tomail, "displayName");
                 send.Subject = "LangleyLib.MailServerLib Test";
                 send.Body = "LangleyLib.MailServerLib Test";
+                //send.Attachments.Add("xxx.text", "displayName");
                 send.Send();
             }
 

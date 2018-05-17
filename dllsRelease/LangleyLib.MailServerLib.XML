@@ -78,6 +78,16 @@
             <param name="fileName">檔案</param>
             <param name="displayName">顯示的名稱</param>
         </member>
+        <member name="P:LangleyLib.MailServerLib.Models.AttachmentCollection.Values">
+            <summary>
+             所有夾檔
+            </summary>
+        </member>
+        <member name="P:LangleyLib.MailServerLib.Models.AttachmentCollection.FileNames">
+            <summary>
+            所有key (檔案路徑)
+            </summary>
+        </member>
         <member name="M:LangleyLib.MailServerLib.Models.MailAddressCollection.AddRange(System.String)">
             <summary>增加 Mail</summary>
             <param name="mail">多筆 Mail (預設分割符號 ',' ';' )</param>

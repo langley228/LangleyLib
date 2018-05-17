@@ -10,6 +10,7 @@ namespace LangleyLib.AdLib.Sample
 {
     class Program
     {
+        //Configuration.ConfigManager.SetConfig("xxx.config");
         static void Main(string[] args)
         {
             //本機帳號
