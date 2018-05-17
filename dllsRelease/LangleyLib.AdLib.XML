@@ -121,10 +121,21 @@
             AD 伺服器類型
             </summary>
         </member>
+        <member name="T:LangleyLib.AdLib.Configuration.AdConfig">
+            <summary>
+            AdConfig
+            </summary>
+        </member>
         <member name="P:LangleyLib.AdLib.Configuration.AdConfig.Config">
             <summary>
             Configuration
             </summary>
+        </member>
+        <member name="M:LangleyLib.AdLib.Configuration.AdConfig.GetModuleConfigPath">
+            <summary>
+            MailServer 模組 (dll) 的 config 路徑
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:LangleyLib.AdLib.Configuration.AdConfig.GetSetting(System.String,System.String)">
             <summary>      
@@ -219,6 +230,36 @@
             
             </summary>
             <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LangleyLib.AdLib.Configuration.ConfigManager">
+            <summary>
+            AdConfig 管理物件
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AdLib.Configuration.ConfigManager.GetConfig">
+            <summary>
+            取得目前的 AdConfig
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.Configuration.ConfigManager.SetConfig(System.String)">
+            <summary>
+            設定目前的 AdConfig 
+            </summary>
+            <param name="filename">Config 檔案路徑</param>
+        </member>
+        <member name="M:LangleyLib.AdLib.Configuration.ConfigManager.OpenConfig(System.String)">
+            <summary>
+            開啟並取得 AdConfig
+            </summary>
+            <param name="filename">Config 檔案路徑</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.AdLib.Configuration.ConfigManager.OpenConfig">
+            <summary>
+            開啟並取得 AdConfig
+            </summary>
             <returns></returns>
         </member>
         <member name="T:LangleyLib.AdLib.AdType">

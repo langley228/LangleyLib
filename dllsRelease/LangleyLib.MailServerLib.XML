@@ -4,10 +4,51 @@
         <name>LangleyLib.MailServerLib</name>
     </assembly>
     <members>
+        <member name="T:LangleyLib.MailServerLib.Configuration.ConfigManager">
+            <summary>
+            MailServerConfig 管理物件
+            </summary>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Configuration.ConfigManager.GetConfig">
+            <summary>
+            取得目前的 MailServerConfig
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Configuration.ConfigManager.SetConfig(System.String)">
+            <summary>
+            設定目前的 MailServerConfig 
+            </summary>
+            <param name="filename">Config 檔案路徑</param>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Configuration.ConfigManager.OpenConfig(System.String)">
+            <summary>
+            開啟並取得 MailServerConfig
+            </summary>
+            <param name="filename">Config 檔案路徑</param>
+            <returns></returns>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Configuration.ConfigManager.OpenConfig">
+            <summary>
+            開啟並取得 MailServerConfig
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LangleyLib.MailServerLib.Configuration.MailServerConfig">
+            <summary>
+            MailServerConfig
+            </summary>
+        </member>
         <member name="P:LangleyLib.MailServerLib.Configuration.MailServerConfig.Config">
             <summary>
             Configuration
             </summary>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.Configuration.MailServerConfig.GetModuleConfigPath">
+            <summary>
+            MailServer 模組 (dll) 的 config 路徑
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:LangleyLib.MailServerLib.Configuration.MailServerConfig.GetSetting(System.String,System.String)">
             <summary>      
@@ -174,6 +215,11 @@
             <param name="isBodyHtml">是否為Html格式</param>
             <param name="files">要夾帶的附檔</param>
             <returns>回傳寄信是否成功(true:成功,false:失敗)</returns>
+        </member>
+        <member name="M:LangleyLib.MailServerLib.SmtpSender.Dispose">
+            <summary>
+            釋放 資源
+            </summary>
         </member>
     </members>
 </doc>
