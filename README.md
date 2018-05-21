@@ -8,6 +8,7 @@ LangleyLib.DateFormat.dll
 LangleyLib.VB6Extensions.dll
 LangleyLib.AdLib.dll
 LangleyLib.MailServerLib.dll
+LangleyLib.AopLib.dll
 ```
 
 
@@ -173,3 +174,112 @@ LangleyLib.MailServerLib.dll
                 send.Send();
             }
 ```
+
+
+<H3>LangleyLib.AopLib.dll</H3>
+<H4>using namespace</H4>
+   
+```
+    using LangleyLib.AopLib;
+```   
+
+<H4>LogFilterAttributeg Sample </H4>
+
+```
+    public class LogFilterAttribute : AopFilterAttribute
+    {
+        public override void OnMethodException(string className, string methodName, Exception ex)
+        {
+            .................
+        }
+        public override void OnMethodAfter(string className, string methodName, object[] outArgs, object returnValue)
+        {        
+            .................
+        }
+        public override void OnMethodBefore(string className, string methodName, object[] inArgs)
+        {
+            .................
+        }
+    }
+```
+
+
+<H4>LogSample Sample </H4>
+
+```
+    [LogFilterAttribute]
+    public class LogSample : AopContext
+    {
+        public string Sample(string strIn, ref string refS, out string outS)
+        {
+            refS = "ref Output";
+            outS = "out Output";
+            Console.WriteLine("Run LogSample.Sample");
+            return "This is Sample";
+        }
+    }
+    
+    .......    
+            string refS="ref Input";
+            string outS;
+            LogSample logsample = new LogSample();
+            logsample.Sample("Input", ref refS, out outS);
+```
+ 
+
+<H4>WorkFlowSample Sample</H4> 
+
+```
+    public class WorkFlowSample : FlowController<Routes.RouteSample>
+    {
+    }
+    [LogFilter]
+    [FlowException("FlowException")]
+    [FlowStart("Start")]
+    public class RouteSample : FlowRoute
+    {
+        [FlowNext("Flow1")]
+        public void Start()
+        {
+            Console.WriteLine("Run LogSample.Start");
+        }
+        [FlowNext("Flow2")]
+        public void Flow1()
+        {
+            Console.WriteLine("Run LogSample.Flow1");
+        }
+        [FlowNext("Flow3")]
+        public void Flow2()
+        {
+            Console.WriteLine("Run LogSample.Flow2");
+        }
+        [FlowNext("Flow4")]
+        public void Flow3()
+        {
+            Console.WriteLine("Run LogSample.Flow3");
+            throw new Exception("Try Exception");
+        }
+        [FlowNext("FlowEnd")]
+        public void Flow4()
+        {
+            Console.WriteLine("Run LogSample.Flow4");
+        }
+        [FlowEnd]
+        public void FlowEnd()
+        {
+            Console.WriteLine("Run LogSample.FlowEnd");
+        }
+
+        [FlowNext("FlowEnd")]
+        public void FlowException()
+        {
+            Console.WriteLine("Run ExceptionFlow");
+        }
+    }
+
+            .............
+            var o = new WorkFlows.Controllers.WorkFlowSample();
+            Thread s = new Thread(o.Start);
+            s.Start();
+```
+
