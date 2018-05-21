@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LangleyLib.AopLib</name>
+    </assembly>
+    <members>
+        <member name="T:LangleyLib.AopLib.AopFilterAttribute">
+            <summary>
+            Filter 抽象類別
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopFilterAttribute.OnMethodException(System.String,System.String,System.Exception)">
+            <summary>發生例外</summary>
+            <param name="className">className</param>
+            <param name="methodName">methodName</param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopFilterAttribute.OnMethodAfter(System.String,System.String,System.Object[],System.Object)">
+            <summary>執行後</summary>
+            <param name="className">className</param>
+            <param name="methodName">methodName</param>
+            <param name="outArgs">標記為 ref 或 out 參數的指定引數</param>
+            <param name="returnValue">傳回值</param>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopFilterAttribute.OnMethodBefore(System.String,System.String,System.Object[])">
+            <summary>執行前</summary>
+            <param name="className">className</param>
+            <param name="methodName">methodName</param>    
+            <param name="inArgs"> 未標記為 out 參數的引數的陣列。</param>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopFilterAttribute.OnMethodBefore(System.MarshalByRefObject,System.Reflection.MethodBase,System.Object[])">
+            <summary>執行前</summary>
+            <param name="obj">Object</param>
+            <param name="method">MethodBase</param>      
+            <param name="inArgs"> 未標記為 out 參數的引數的陣列。</param>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopFilterAttribute.OnMethodAfter(System.MarshalByRefObject,System.Reflection.MethodBase,System.Exception,System.Object[],System.Object)">
+            <summary>執行後</summary>
+            <param name="obj">Object</param>
+            <param name="method">MethodBase</param>  
+            <param name="outArgs">標記為 ref 或 out 參數的指定引數</param>
+            <param name="returnValue">傳回值</param>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopFilterAttribute.OnMethodException(System.MarshalByRefObject,System.Reflection.MethodBase,System.Exception)">
+            <summary>發生例外</summary>
+            <param name="obj">Object</param>
+            <param name="method">MethodBase</param>
+            <param name="ex"></param>
+        </member>
+        <member name="T:LangleyLib.AopLib.AopContextAttribute">
+            <summary>
+            標示 Filter 物件
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopContextAttribute.#ctor">
+            <summary>
+            FilterContextAttribute
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopContextAttribute.GetObjectSink(System.MarshalByRefObject,System.Runtime.Remoting.Messaging.IMessageSink)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LangleyLib.AopLib.FlowNextAttribute">
+            <summary>    
+            FlowNext 標示
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AopLib.FlowNextAttribute.#ctor(System.String)">
+            <summary>
+            FlowNextAttribute 建構子
+            </summary>
+            <param name="name">下一個 Flow</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:LangleyLib.AopLib.FlowNextAttribute.OnMethodAfter(System.MarshalByRefObject,System.Reflection.MethodBase,System.Exception,System.Object[],System.Object)" -->
+        <member name="M:LangleyLib.AopLib.FlowNextAttribute.OnMethodBefore(System.MarshalByRefObject,System.Reflection.MethodBase,System.Object[])">
+            <summary>執行前</summary>
+            <param name="obj">Object</param>
+            <param name="method">MethodBase</param>      
+            <param name="inArgs"> 未標記為 out 參數的引數的陣列。</param>
+        </member>
+        <member name="M:LangleyLib.AopLib.FlowNextAttribute.OnMethodException(System.MarshalByRefObject,System.Reflection.MethodBase,System.Exception)">
+            <summary>發生例外</summary>
+            <param name="obj">Object</param>
+            <param name="method">MethodBase</param>
+            <param name="ex"></param>
+        </member>
+        <member name="P:LangleyLib.AopLib.FlowNextAttribute.Name">
+            <summary>
+            下一個 Flow
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AopLib.FlowNextAttribute.Exception">
+            <summary>
+            例外 Flow 
+            </summary>
+        </member>
+        <member name="T:LangleyLib.AopLib.FlowEndAttribute">
+            <summary>
+            標示 結束的 Flow
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AopLib.FlowEndAttribute.#ctor">
+            <summary>
+            FlowEndAttribute 建構子
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AopLib.FlowEndAttribute.OnMethodAfter(System.MarshalByRefObject,System.Reflection.MethodBase,System.Exception,System.Object[],System.Object)">
+            <summary>執行後</summary>
+            <param name="obj">Object</param>
+            <param name="method">MethodBase</param>  
+            <param name="outArgs">標記為 ref 或 out 參數的指定引數</param>
+            <param name="returnValue">傳回值</param>
+        </member>
+        <member name="M:LangleyLib.AopLib.FlowEndAttribute.OnMethodException(System.MarshalByRefObject,System.Reflection.MethodBase,System.Exception)">
+            <summary>發生例外</summary>
+            <param name="obj">Object</param>
+            <param name="method">MethodBase</param>
+            <param name="ex"></param>
+        </member>
+        <member name="T:LangleyLib.AopLib.FlowExceptionAttribute">
+            <summary>
+            標示 例外 Flow
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AopLib.FlowExceptionAttribute.#ctor(System.String)">
+            <summary>
+            FlowExceptionAttribute 建構子
+            </summary>
+            <param name="name">例外 Flow</param>
+        </member>
+        <member name="P:LangleyLib.AopLib.FlowExceptionAttribute.Name">
+            <summary>
+            例外 Flow
+            </summary>
+        </member>
+        <member name="T:LangleyLib.AopLib.FlowStartAttribute">
+            <summary>
+            標示 起始 Flow
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AopLib.FlowStartAttribute.#ctor(System.String)">
+            <summary>
+            FlowStartAttribute 建構子
+            </summary>
+            <param name="name">起始 Flow</param>
+        </member>
+        <member name="P:LangleyLib.AopLib.FlowStartAttribute.Name">
+            <summary>
+            起始 Flow
+            </summary>
+        </member>
+        <member name="T:LangleyLib.AopLib.AopMethodAttribute">
+            <summary>    
+            Method 抽象類別
+            </summary>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopMethodAttribute.OnMethodBefore(System.MarshalByRefObject,System.Reflection.MethodBase,System.Object[])">
+            <summary>執行前</summary>
+            <param name="obj">Object</param>
+            <param name="method">MethodBase</param>      
+            <param name="inArgs"> 未標記為 out 參數的引數的陣列。</param>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopMethodAttribute.OnMethodAfter(System.MarshalByRefObject,System.Reflection.MethodBase,System.Exception,System.Object[],System.Object)">
+            <summary>執行後</summary>
+            <param name="obj">Object</param>
+            <param name="method">MethodBase</param>  
+            <param name="outArgs">標記為 ref 或 out 參數的指定引數</param>
+            <param name="returnValue">傳回值</param>
+        </member>
+        <member name="M:LangleyLib.AopLib.AopMethodAttribute.OnMethodException(System.MarshalByRefObject,System.Reflection.MethodBase,System.Exception)">
+            <summary>發生例外</summary>
+            <param name="obj">Object</param>
+            <param name="method">MethodBase</param>
+            <param name="ex"></param>
+        </member>
+        <member name="T:LangleyLib.AopLib.AopContext">
+            <summary>
+            套用 Filter 的 Aop 抽象類別
+            </summary>
+        </member>
+        <member name="T:LangleyLib.AopLib.FlowRoute">
+            <summary>
+            套用 Filter 的 FlowRoute 抽象類別
+            </summary>
+        </member>
+        <member name="P:LangleyLib.AopLib.FlowRoute.NextMethod">
+            <summary>
+            下一個要執行的 Method
+            </summary>
+        </member>
+        <member name="T:LangleyLib.AopLib.FlowController`1">
+            <summary>
+            流程執行控制 Controller
+            </summary>
+            <typeparam name="TFlow">FlowRoute</typeparam>
+        </member>
+        <member name="M:LangleyLib.AopLib.FlowController`1.Start">
+            <summary>
+            開始執行
+            </summary>
+        </member>
+    </members>
+</doc>
