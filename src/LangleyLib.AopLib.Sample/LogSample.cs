@@ -17,6 +17,5 @@ namespace LangleyLib.AopLib.Sample
             Console.WriteLine("Run LogSample.Sample");
             return "This is Sample";
         }
-
     }
 }
